@@ -1,4 +1,4 @@
-require "open-uri"
+require "http"
 require "json"
 
 line_width = 40
@@ -21,7 +21,7 @@ gmaps_url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{user_lo
 # p "Getting coordinates from:"
 # p gmaps_url
 
-raw_gmaps_data = URI.open(gmaps_url).read
+raw_gmaps_data = HTTP.get(gmaps_url)
 
 parsed_gmaps_data = JSON.parse(raw_gmaps_data)
 
@@ -48,7 +48,7 @@ pirate_weather_url = "https://api.pirateweather.net/forecast/#{pirate_weather_ke
 # p "Getting weather from:"
 # p pirate_weather_url
 
-raw_pirate_weather_data = URI.open(pirate_weather_url).read
+raw_pirate_weather_data = HTTP.get(pirate_weather_url)
 
 parsed_pirate_weather_data = JSON.parse(raw_pirate_weather_data)
 
