@@ -3,9 +3,9 @@ require "json"
 
 line_width = 40
 
-puts "="*line_width
+puts "=" * line_width
 puts "Will you need an umbrella today?".center(line_width)
-puts "="*line_width
+puts "=" * line_width
 puts
 puts "Where are you?"
 user_location = gets.chomp
@@ -78,7 +78,6 @@ precip_prob_threshold = 0.10
 any_precipitation = false
 
 next_twelve_hours.each do |hour_hash|
-
   precip_prob = hour_hash.fetch("precipProbability")
 
   if precip_prob > precip_prob_threshold
