@@ -9,7 +9,6 @@ tasks:
       export GEM_HOME=/workspace/.rvm
       export GEM_PATH=$GEM_HOME:$GEM_PATH
       export PATH=/workspace/.rvm/bin:$PATH
-      bin/setup
 ports:
   - port: 3000
     onOpen: open-preview
