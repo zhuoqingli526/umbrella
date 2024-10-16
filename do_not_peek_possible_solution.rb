@@ -1,5 +1,6 @@
 require "http"
 require "json"
+require "dotenv/load"
 
 line_width = 40
 
