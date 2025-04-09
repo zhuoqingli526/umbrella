@@ -23,6 +23,17 @@ longitude = location.fetch("lng")
 
 pp latitude
 pp longitude
+
+weather_url = "https://api.pirateweather.net/forecast/" + ENV.fetch("PIRATE_WEATHER_KEY") + "/#{latitude},#{longitude}"
+response = HTTP.get(weather_url).to_s
+parsed_response =  JSON.parse(response)
+current = parsed_response.fetch("currently")
+temperature = current.fetch("temperature")
+
+pp "It is currently #{temperature}°F."
+
+
+
 # currently_hash = parsed_response.fetch("currently")
 
 # current_temp = currently_hash.fetch("temperature")
